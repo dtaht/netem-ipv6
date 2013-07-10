@@ -8,21 +8,20 @@ P=2001:470:8236:1ee1
 # To make my life easier and since I 
 # Thank god my prefix is decimal
 
-#MS="match u32 0x20010470 0xffffffff at 8 \
-#     match u32 0x82361ee1 0xffffffff at 12"
+MS="match u32 0x20010470 0xffffffff at 8 \
+     match u32 0x82361ee1 0xffffffff at 12"
 
-MS=""
 MD="match u32 0x20010470 0xffffffff at 24 \
-     match u32 0x82361ee1 0xffffffff at 26"
+     match u32 0x82361ee1 0xffffffff at 28"
 
 export MS MD
 N=netem
-
+INSMOD=modprobe
 FARGS="noecn limit 800"
-DNS=$P::d
+DNS=$P::1
 NFLIX=$P::8
 
-S1=$P::d
+S1=$P::1
 S2=$P::2
 S3=$P::3
 S4=$P::4
